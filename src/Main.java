@@ -129,7 +129,7 @@ public class Main {
                     break;
 
                 case 4://dizi
-
+                    series();
                     break;
 
                 case 5:// exit
@@ -407,6 +407,36 @@ public class Main {
 
         }
 
+    }
+
+    public static void series(){
+        System.out.println("\n SERIES: ");
+        System.out.println("1-) Display All Series");
+        System.out.println("2-) Choose a Catagory");
+        System.out.println("3-) Back To Home Page");
+        System.out.println();
+        System.out.print("Enter Your Choice: ");
+        int choice = scanner.nextInt();
+        switch(choice){
+            case 1: allSeriesArray();break;
+            case 2: ;break;
+            case 3: return;
+            default: System.out.println("Invalid Choice, please try again.");
+
+        }
+    }
+
+    public static void allSeriesArray(){
+        String[] seriesArray= {"1- Lupin", "2-The Walking Dead", "3- Narcos","4- The Protector", "5- La Casa De Papel\n",
+                "6- Stranger Things", "7- Chilling Adventures of Sabrina", "8- Hellbound", "9- Parasyte", "10- Van Helsing\n",
+        "11- Bir Erkek Bir Kadın", "12- Emily in Paris", "13- Friends", "14- How I Met Your Mother (HIMYM)", "15- Orange Is The New Black\n",
+        "16- Thank You Next", "17- Bridgerton", "18- One Day", "19- Shahmaran", "20- Ginny & Georgia\n",
+        "21- Lucifer", "22- The Witcher", "23- One Piece", "24- Wednesday", "25- Locke & Key\n",
+        "26- SpongeBob Squarepants", "27- Miraculous: Tales of Ladybug and Cat Noir","28- Ben10", "29- Adventure Time", "30- World of Winx"};
+
+        for(int i=0;i<seriesArray.length;i++){
+            System.out.println(seriesArray[i]);
+        }
     }
 
     public static void main(String[] args) {
