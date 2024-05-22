@@ -4,8 +4,6 @@ public class Main {
 
     static int INDEX = 100;
     static int UserQuantity = 0; //kullanıcı sayısı
-    static String[][] series = new String[INDEX][6]; // title, topic,cast, director, season+episode , comment
-    static String[][]  movies= new String[INDEX][6]; // title, topic,cast, director, time , comment
     static String[][] users = new String[INDEX][3]; // fullName, email, password
     static Scanner scanner = new Scanner(System.in);
 
