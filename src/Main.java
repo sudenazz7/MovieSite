@@ -121,6 +121,7 @@ public class Main {
                     break;
 
                 case 3://film
+                    Movie();
 
                     break;
 
@@ -420,6 +421,664 @@ public class Main {
         }
 
     }
+
+    public static void Movie(){
+        Scanner scanner= new Scanner(System.in);
+
+        System.out.println("\nMOVIES");
+        System.out.println("1-Display All Movies");
+        System.out.println("2-Choose a Category");
+        System.out.println("3-Back to Home Page");
+        System.out.println();
+        System.out.print("Please Enter your Transaction : ");
+
+
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice){
+            case 1: //Tüm filmleri yaz
+                AllMovieArray();
+                break;
+            case 2: // Katogorileri yaz
+                chooseCatagoryForMovie();
+                break;
+            case 3:
+                return;
+            default:
+                System.out.println("Invalid Choice! Please Try Again!");
+
+        }
+
+    }
+
+    public static void AllMovieArray() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String[] movieArray = {"1-Heart Parade ", "2-In Good Hands ", "3-Love Tactics ", "4-Last Call For Istanbul ", "5-Ashes\n",
+                "6-Red Notice ", "7-Extraction ", "8-Fast and Furious 7 ", "9-The Maze Runner ", "10-Now You See Me\n",
+                "11-Countdown ", "12-Bird Box ", "13-Blood Red Sky ", "14-Ghost Lab ", "15-Mirrors\n",
+                "16-My Travel Buddy ", "17-Recep Ivedik ", "18-Hababam Class ", "19-We Can Be Herdes ", "20-Little Man\n",
+                "21-I Am Mother ", "22-Mirage ", "23-Paradise ", "24-After Earth ", "25-Extinction\n",
+                "26-Boss Baby ", "27-Madagascar ", "28-Alvin And The Chipmunks (Chipwrecked) ", "29-My Little Pony ", "30-Barbie Dolphin Magic\n"};
+
+
+        String[][] movieDetails = {
+                {"-Heart Parade-", "The promotion, the engagement — she has her life all planned out.\n" +
+                        "An unexpected trip to Krakow and a romance with a charming\n" +
+                        "widower? Not on the agenda.",
+                        "Anna Prochniak, Michal\n" +
+                                "Czernecki, lwo Rajski",
+                        "Filip Zylber",
+                        "1 Hour 48 Min"},
+                {"-In Good Hands-", "Melisa, a single mother, is sick and has very little time left to live.\n" +
+                        " Will she be able to have a whirlwind \n" +
+                        "love affair and find a man to whom she can entrust her son \n" +
+                        "Can in this short time?",
+                        "Asli Enver, Kaan\n" +
+                                "Urgancioglu, Mert Ege Ak",
+                        "Ketche Hakan Kirvavag",
+                        "1 Hour 45 Min"},
+                {"-Love Tactics-", "She's a blogging fashionista who doesn't believe in love.\n" +
+                        "He's a serial dater with clear attachment issues. A romantic\n" +
+                        "airport scene lies in store.",
+                        "Demet Ozdemir, Şükrü\n" +
+                                "Özyılmaz, Atakan Çelik",
+                        "Emre Kabakuşak",
+                        "1 Hour 48 Min"},
+                {"-Last Call For Istanbul-", "Beren Saat and Kivang Tatlitug stumble into a forbidden\n" +
+                        "romance when they meet as two married people with\n" +
+                        "magnetic chemistry in New York City.",
+                        "Kıvanç Tatlıtuğ,Beren Saat",
+                        "Gönenç Uyanık",
+                        "1 Hour 31 Min"},
+                {"-Ashes-",
+                        "A married and wealthy woman starts reading an unpublished novel. \n" +
+                                "However, dizzying fantasies turn into a dangerous\n" +
+                                " forbidden love and destroy the woman's life.",
+                        "Funda Eryiğit, Alperen Duymaz, Mehmet Günsür",
+                        "Erdem Tepegöz",
+                        "1 Hour 40 Min"},
+                {"-Red Notice-", "In this globe-trotting action adventure, a daring heist brings\n" +
+                        "together the FBI's top profiler and two rival art thieves.",
+                        "Dwayne Johnson,\n" +
+                                "Ryan Reynolds, Gal Gadot",
+                        "Rawson Marshall Thurber",
+                        "1 Hour 58 Min"},
+                {"-Extraction-", "In this gritty action thriller, an elite soldier-for-hire sets out\n" +
+                        "to rescue the kidnapped son of a drug lord.",
+                        "Chris Hemsworth,\n" +
+                                "Rudhraksh Jaiswal,\n" +
+                                "Randeep Hooda",
+                        "Sam Hargrave",
+                        "1 Hour 58 Min"},
+                {"-Fast and Furious 7-", "Haunted by his past and driven by loyalty, a street racer- \n" +
+                        "turned-vigilante must team up with an unlikely ally to take \n" +
+                        "down an elusive assassin.",
+                        "Vin Diesel, Paul\n" +
+                                "Walker, Dwayne Johnson",
+                        "James Wan",
+                        "2 Hour 17 Min"},
+                {"-The Maze Runner-", "Trapped in a maze without memory of the outside world,\n" +
+                        "they fight to survive. But a mysterious newcomer could\n" +
+                        "hold the key to their escape.",
+                        "Dylan O'Brien, Kaya\n" +
+                                "Scodelario, Thomas Brodie-Sangster",
+                        "Wes Ball",
+                        "1 Hour 54 Min"},
+                {"-Now You See Me-", "A troupe of brainy illusionists specialize in stealing from\n" +
+                        "banks and giving the cash to their audiences, all while\n" +
+                        "outwitting a team of FBI agents.",
+                        "Jesse Eisenberg, Mark \n" +
+                                "Ruffalo, Woody Harrelson",
+                        "Louis Leterrier",
+                        "1 Hour 55 Min"},
+                {"-Countdown-", "When a nurse downloads an app that predicts the user's\n" +
+                        "exact time of death, she discovers she has three days to\n" +
+                        "beat the clock and change her fate.",
+                        "Jordan Calloway,\n" +
+                                "Peter Facinelli, Tichina Arnold",
+                        "Justin Dec",
+                        "1 Hour 30 Min"},
+                {"-Bird Box-", "A mother hell-bent on saving her kids from a terrifying\n" +
+                        "unseen force sets out on a dangerous journey in this\n" +
+                        "dystopian thriller starring Sandra Bullock.",
+                        "Sandra Bullock,\n" +
+                                "Trevante Rhodes, John Malkovich",
+                        "Susanne Bier",
+                        "2 Hour 4 Min"},
+                {"-Blood Red Sky-", "They had a perfect plan: hijack a plane and hold the\n" +
+                        "passengers ransom. But there’s another threat on board...\n" +
+                        "and she’s far more deadly.",
+                        "Peri Baumeister,\n" +
+                                "Alexander Scheer, Kais Setti",
+                        "Peter Thorwarth",
+                        "2 Hour 3 Min"},
+                {"-Ghost Lab-", "After witnessing a haunting in their hospital, two doctors\n" +
+                        "become dangerously obsessed with obtaining scientific\n" +
+                        "proof that ghosts exist.",
+                        "Thanapob Leeratanakachorn,\n" +
+                                "Paris Intarakomalyasut, Nuttanicha\n" +
+                                "Dungwattanawanich",
+                        "Paween Purijitpanya",
+                        "1 Hour 57 Min"},
+                {"-Mirrors-", "A troubled ex-cop working as a night security " +
+                        "guard discovers malevolent\n" +
+                        "spirits haunting the mirrors of a fire-ravaged " +
+                        "department store.",
+                        "Kiefer Sutherland, Paula\n" +
+                                "Patton, Cameron Boyce",
+                        "Alexandre Aja",
+                        "1 Hour 51 Min"},
+                {"-My Travel Buddy-", "Days before Eid, a salesman fired from his job drives to Ayvalik to meet his\n" +
+                        "girlfriend's family, but the trip goes astray due to his zany travel buddy.",
+                        "Oguzhan Koç, İbrahim\n" +
+                                "Büyükak, Emre Kınay",
+                        "Bedran Güzel",
+                        "1 Hour 57 Min"},
+                {"-Recep Ivedik-", "A man finds the wallet of a rich man and takes a rigorous trip in an old car to\n" +
+                        "return it, finding an old love and a new life of luxury awaiting.",
+                        "Şahan Gökbakar, Fatma Toptaş, Tuluğ Çizgen",
+                        "Togan Gokbakar",
+                        "1 Hour 41 Min"},
+                {"-Hababam Class-", "When Private Camlica High School turns co-ed, chaos and a heated rivalry\n" +
+                        "between the girls and boys ensue.",
+                        "Altan Erkekli, Toygan Avanoğlu,\n Hande Katipoğlu",
+                        "Doğa Can Anafarta",
+                        "1 Hour 46 Min"},
+                {"-We Can Be Herdes-", "This 2020 action-adventure family film based on \"The Adventures of\n" +
+                        "Sharkboy and Lavagirl\" features Pedro Pascal and Priyanka Chopra.",
+                        "YaYa Gosselin, Pedro Pascal,\n" +
+                                "Priyanka Chopra Jonas",
+                        "Robert Rodrigue",
+                        "1 Hour 40 Min"},
+                {"-Little Man-", "A man is so eager to become a dad that he'll believe anything, including the\n" +
+                        "notion that a baby-faced thief on the lam is really an abandoned toddler.",
+                        "Marlon Wayans, Shawn Wayans, Kerry Washington",
+                        "Keenen Ivory Wayans",
+                        "1 Hour 37 Min"},
+                {"-I Am Mother-", "Following humanity's mass extinction, a teen raised alone by a maternal\n" +
+                        "droid finds her entire world shaken when she encounters another human.",
+                        "Clara Rugaard, Rose Byrne,\n" +
+                                "Hilary Swank",
+                        "Grant Sputore",
+                        "1 Hour 53 Min"},
+                {"-Mirage-", "When a caring nurse alters the past to save a life, her present reality shifts to\n" +
+                        "a new timeline — one without her beloved daughter.",
+                        "Adriana Ugarte, Chino Darin,\n" +
+                                "Javier Gutiérrez",
+                        "Oriol Paulo",
+                        "2 Hour 9 Min"},
+                {"-Paradise-", "In the future, new technology lets people sell years of their lives to\n" +
+                        "others — with terrifying consequences for those who have no\n" +
+                        "other options left.",
+                        "Kostja Ullmann, Corinna\n" +
+                                "Kirchhoff, Marlene Tanczik ",
+                        "Boris Kunz",
+                        "1 Hour 58 Min"},
+                {"-After Earth-", "After crash-landing on the long-abandoned planet Earth, a young\n" +
+                        "boy sets out to find a beacon that will save him -- and his dying\n" +
+                        "father -- from doom.",
+                        "Jaden Smith, Will Smith,\n" +
+                                "Sophie Okonedo",
+                        "M. Night Shyamalan",
+                        "1 Hour 40 Min"},
+                {"-Extinction-", "Plagued by dreams of an alien invasion, a family man faces his\n" +
+                        "worst nightmare when an extraterrestrial force begins\n" +
+                        "exterminating Earth's inhabitants.",
+                        "Michael Pefia, Lizzy Caplan,\n" +
+                                "Israel Broussard",
+                        "Ben Young",
+                        "1 Hour 45 Min"},
+                {"-Boss Baby-", "A kid finds himself at the center of a sinister corporate plot when\n" +
+                        "his parents bring home a baby who only talks business when\n" +
+                        "they're not around.",
+                        "Alec Baldwin, Lisa Kudrow,\n" +
+                                "Jimmy Kimmel",
+                        "Tom McGrath",
+                        "1 Hour 37 Min"},
+                {"-Madagascar-", "Four animal friends get a taste of the wild life when they break out \n" +
+                        "of captivity at the Central Park Zoo and wash ashore on the island \n" +
+                        "of Madagascar.",
+                        "Ben Stiller, Chris Rock,\n " +
+                                "David Schwimmer",
+                        "Eric Darnell, Tom McGrath",
+                        "1 Hour 26 Min"},
+                {"-Alvin And The Chipmunks (Chipwrecked)", "After boarding a cruise liner for a family vacation, the Chipmunks\n" +
+                        "and the Chipettes end up castaways on a deserted island... but\n" +
+                        "they're not alone!",
+                        "Jason Lee, David Cross, \n" +
+                                "Jenny Slate",
+                        "Mike Mitchell",
+                        "1 Hour 27 Min"},
+                {"-My Little Pony-", "Equestria's divided. But a bright-eyed hero believes Earth Ponies,\n" +
+                        "Pegasi and Unicorns should be pals — and, hoof to heart, she's \n" +
+                        "determined to prove it.",
+                        "Vanessa Hudgens, Kimiko Glenn, \n James Marsden",
+                        "Robert Cullen, José Luis Ucha",
+                        "1 Hour 31 Min"},
+                {"-Barbie Dolphin Magic-", "While visiting Ken and exploring a coral reef, Barbie and her sisters\n" +
+                        "make an amazing discovery and meet a mysterious new friend.",
+                        "Erica Lindbeck, Shannon\n" +
+                                "Chan-Kent, Kazumi Evans",
+                        "Conrad Helten",
+                        "1 Hour 4 Min"}
+        };
+
+
+        for (int i = 0; i < movieArray.length; i++) {
+            System.out.println(movieArray[i]);
+        }
+
+        int choice = -1;
+
+        while (choice<1 || choice> movieArray.length){
+            System.out.print("Choose a movie between 1-30 :");
+            if (scanner.hasNextInt()){
+                choice = scanner.nextInt();
+                if(choice<1 || choice> movieArray.length){
+                    System.out.println("Invalid Choice! Please choose a number between 1-30. ");
+                }
+            }else {
+                System.out.println("Invalid choice!Please enter a number.");
+                scanner.next();
+            }
+        }
+
+        scanner.nextLine();
+
+        if (choice >= 1 && choice <= movieDetails.length) {
+            String[] details = movieDetails[choice - 1];
+            System.out.println("\n" + details[0]);
+            System.out.println("\nDescription: " + details[1]);
+            System.out.println("\nCast: " + details[2]);
+            System.out.println("\nDirector: " + details[3]);
+            System.out.println("\nTime: " + details[4]);
+        } else
+            System.out.println("Invalid Choice");
+
+
+        System.out.println("\nHow much did you like the movie?");
+        System.out.println("1-I didn't like 😔\n2-I liked 🙂\n3-I loved 😍");
+        int userRating = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Thank you for your answer :) ");
+
+        System.out.println("\nWould you like to comment ? ");
+        System.out.println("1-Yes\n2-No");
+        int answer = scanner.nextInt();
+        scanner.nextLine();
+
+
+        if (answer == 1) {
+            System.out.println("\nPlease write your comment");
+            String comment = scanner.nextLine();
+            System.out.println("Your comment: " + comment);
+        } else {
+            System.out.println("Returning to the home page..");
+
+        }
+
+    }
+    public static void chooseCatagoryForMovie(){
+
+        System.out.println("Choose a Catagory");
+        System.out.println("1-Romantic");
+        System.out.println("2-Action");
+        System.out.println("3-Horror and Thriller");
+        System.out.println("4-Sci-Fi and Fantasy");
+        System.out.println("5-Comedy");
+        System.out.println("6-Family and Kids" + "\n" );
+
+        int choice = scanner.nextInt();
+
+        switch(choice){
+
+            case 1:displayRomanticMovies(); break;
+            case 2:displayActionMovie(); break;
+            case 3:displayHorrorMovies(); break;
+            case 4:displayFantasyMovies(); break;
+            case 5:displayComedyMovies(); break;
+            case 6:displayKidsMovies(); break;
+
+
+        }
+    }
+
+    public static void displayRomanticMovies(){
+        String [] romanticMovies = {"-- Romantic Movies --\n","1-Heart Parade ", "2-In Good Hands ", "3-Love Tactics ",
+                "4-Last Call For Istanbul ", "5-Ashes","6-Return to previos page..."};
+
+        for(int i=0;i<romanticMovies.length;i++){
+            System.out.println(romanticMovies[i]);
+        }
+        System.out.print("\nEnter Your Choice: ");
+        int choice = scanner.nextInt();
+
+
+        switch(choice){
+            case 1: displayDeatilsForMovies("-Heart Parade-",
+                    "The promotion, the engagement — she has her life all planned out.\n" +
+                            "An unexpected trip to Krakow and a romance with a charming\n" +
+                            "widower? Not on the agenda.",
+                    "Anna Prochniak, Michal\n" +
+                            "Czernecki, lwo Rajski",
+                    "Filip Zylber",
+                    "1 Hour 48 Min");
+                break;
+            case 2:displayDeatilsForMovies("-In Good Hands-","Melisa, a single mother, is sick and has very little time left to live.\n" +
+                            " Will she be able to have a whirlwind \n" +
+                            "love affair and find a man to whom she can entrust her son \n" +
+                            "Can in this short time?",
+                    "Aslı Enver, Kaan\n" +
+                            "Urgancıoğlu, Mert Ege Ak",
+                    "Ketche Hakan Kırvavaç",
+                    "1 Hour 45 Min");
+                break;
+            case 3:displayDeatilsForMovies("-Love Tactics-", "She's a blogging fashionista who doesn't believe in love.\n" +
+                            "He's a serial dater with clear attachment issues. A romantic\n" +
+                            "airport scene lies in store.",
+                    "Demet Ozdemir, Şükrü\n" +
+                            "Özyılmaz, Atakan Çelik",
+                    "Emre Kabakuşak",
+                    "1 Hour 48 Min");
+                break;
+            case 4:displayDeatilsForMovies("-Last Call For Istanbul-", "Beren Saat and Kivang Tatlitug stumble into a forbidden\n" +
+                            "romance when they meet as two married people with\n" +
+                            "magnetic chemistry in New York City.",
+                    "Kıvanç Tatlıtuğ,Beren Saat",
+                    "Gönenç Uyanık",
+                    "1 Hour 31 Min");
+                break;
+            case 5:displayDeatilsForMovies("-Ashes-",
+                    "A married and wealthy woman starts reading an unpublished novel. \n" +
+                            "However, dizzying fantasies turn into a dangerous\n" +
+                            " forbidden love and destroy the woman's life.",
+                    "Funda Eryiğit, Alperen Duymaz, Mehmet Günsür",
+                    "Erdem Tepegöz",
+                    "1 Hour 40 Min");
+                break;
+            case 6: return;
+            default:
+                System.out.println("Invalid choice.Please try again!");
+        }
+
+
+    }
+    public static void displayActionMovie(){
+        String [] actionMovie = { "-- Action Movies --\n","1-Red Notice-", "2-Extraction ", "3-Fast and Furious 7 ", "4-The Maze Runner ", "5-Now You See Me","6-Return to previous page"};
+        for(int i=0;i<actionMovie.length;i++){
+            System.out.println(actionMovie[i]);
+        }
+
+        System.out.print("\nEnter Your Choice:");
+        int choice = scanner.nextInt();
+
+        switch (choice){
+            case 1:displayDeatilsForMovies("-Red Notice-", "In this globe-trotting action adventure, a daring heist brings\n" +
+                            "together the FBI's top profiler and two rival art thieves.",
+                    "Dwayne Johnson,\n" +
+                            "Ryan Reynolds, Gal Gadot",
+                    "Rawson Marshall Thurber",
+                    "1 Hour 58 Min");
+            break;
+            case 2:displayDeatilsForMovies("-Extraction-", "In this gritty action thriller, an elite soldier-for-hire sets out\n" +
+                            "to rescue the kidnapped son of a drug lord.",
+                    "Chris Hemsworth,\n" +
+                            "Rudhraksh Jaiswal,\n" +
+                            "Randeep Hooda",
+                    "Sam Hargrave",
+                    "1 Hour 58 Min");
+            break;
+            case 3:displayDeatilsForMovies("-Fast and Furious 7-", "Haunted by his past and driven by loyalty, a street racer- \n" +
+                            "turned-vigilante must team up with an unlikely ally to take \n" +
+                            "down an elusive assassin.",
+                    "Vin Diesel, Paul\n" +
+                            "Walker, Dwayne Johnson",
+                    "James Wan",
+                    "2 Hour 17 Min");
+            break;
+            case 4:displayDeatilsForMovies("-The Maze Runner-", "Trapped in a maze without memory of the outside world,\n" +
+                            "they fight to survive. But a mysterious newcomer could\n" +
+                            "hold the key to their escape.",
+                    "Dylan O'Brien, Kaya\n" +
+                            "Scodelario, Thomas Brodie-Sangster",
+                    "Wes Ball",
+                    "1 Hour 54 Min");
+            case 5:displayDeatilsForMovies("-Now You See Me-", "A troupe of brainy illusionists specialize in stealing from\n" +
+                            "banks and giving the cash to their audiences, all while\n" +
+                            "outwitting a team of FBI agents.",
+                    "Jesse Eisenberg, Mark \n" +
+                            "Ruffalo, Woody Harrelson",
+                    "Louis Leterrier",
+                    "1 Hour 55 Min");
+            break;
+            case 6: return;
+            default:
+                System.out.println("Invalid choice.Please try again!");
+        }
+
+    }
+
+    public static void displayHorrorMovies(){
+        String [] horrorMovie = {"-- Horror and Thriller Movies --\n","1-Countdown", "2-Bird Box ", "3-Blood Red Sky ", "4-Ghost Lab ", "5-Mirrors","6-Return to pervious page..."};
+        for(int i=0;i<horrorMovie.length;i++){
+            System.out.println(horrorMovie[i]);
+        }
+
+        System.out.print("\nEnter a Choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice){
+            case 1:displayDeatilsForMovies("-Countdown-", "When a nurse downloads an app that predicts the user's\n" +
+                            "exact time of death, she discovers she has three days to\n" +
+                            "beat the clock and change her fate.",
+                    "Jordan Calloway,\n" +
+                            "Peter Facinelli, Tichina Arnold",
+                    "Justin Dec",
+                    "1 Hour 30 Min");
+                break;
+            case 2:displayDeatilsForMovies("-Bird Box-", "A mother hell-bent on saving her kids from a terrifying\n" +
+                            "unseen force sets out on a dangerous journey in this\n" +
+                            "dystopian thriller starring Sandra Bullock.",
+                    "Sandra Bullock,\n" +
+                            "Trevante Rhodes, John Malkovich",
+                    "Susanne Bier",
+                    "2 Hour 4 Min");
+                break;
+            case 3:displayDeatilsForMovies("-Blood Red Sky-", "They had a perfect plan: hijack a plane and hold the\n" +
+                            "passengers ransom. But there’s another threat on board...\n" +
+                            "and she’s far more deadly.",
+                    "Peri Baumeister,\n" +
+                            "Alexander Scheer, Kais Setti",
+                    "Peter Thorwarth",
+                    "2 Hour 3 Min");
+                break;
+            case 4:displayDeatilsForMovies("-Ghost Lab-", "After witnessing a haunting in their hospital, two doctors\n" +
+                            "become dangerously obsessed with obtaining scientific\n" +
+                            "proof that ghosts exist.",
+                    "Thanapob Leeratanakachorn,\n" +
+                            "Paris Intarakomalyasut, Nuttanicha\n" +
+                            "Dungwattanawanich",
+                    "Paween Purijitpanya",
+                    "1 Hour 57 Min");
+                break;
+            case 5:displayDeatilsForMovies("-Mirrors-", "A troubled ex-cop working as a night security " +
+                            "guard discovers malevolent\n" +
+                            "spirits haunting the mirrors of a fire-ravaged " +
+                            "department store.",
+                    "Kiefer Sutherland, Paula\n" +
+                            "Patton, Cameron Boyce",
+                    "Alexandre Aja",
+                    "1 Hour 51 Min");
+                break;
+            case 6: return;
+            default:
+                System.out.println("Invalid choice.Please try again.");
+        }
+
+
+    }
+    public static void displayComedyMovies(){
+        String [] comedyMovie = {"-- Comedy Movies --\n","1-My Travel Buddy ", "2-Recep Ivedik ", "3-Hababam Class ", "4-We Can Be Herdes ", "5-Little Man","Return to previous page..."};
+        for(int i=0;i<comedyMovie.length;i++){
+            System.out.println(comedyMovie[i]);
+        }
+
+        System.out.print("\nEnter a Choice:");
+        int choice= scanner.nextInt();;
+
+        switch (choice){
+            case 1:displayDeatilsForMovies("-My Travel Buddy-", "Days before Eid, a salesman fired from his job drives to Ayvalik to meet his\n" +
+                            "girlfriend's family, but the trip goes astray due to his zany travel buddy.",
+                    "Oguzhan Koç, İbrahim\n" +
+                            "Büyükak, Emre Kınay",
+                    "Bedran Güzel",
+                    "1 Hour 57 Min");
+                break;
+            case 2:displayDeatilsForMovies("-Recep Ivedik-", "A man finds the wallet of a rich man and takes a rigorous trip in an old car to\n" +
+                            "return it, finding an old love and a new life of luxury awaiting.",
+                    "Şahan Gökbakar, Fatma Toptaş, Tuluğ Çizgen",
+                    "Togan Gokbakar",
+                    "1 Hour 41 Min");
+                break;
+            case 3:displayDeatilsForMovies("-Hababam Class-", "When Private Camlica High School turns co-ed, chaos and a heated rivalry\n" +
+                            "between the girls and boys ensue.",
+                    "Altan Erkekli, Toygan Avanoğlu,\n Hande Katipoğlu",
+                    "Doğa Can Anafarta",
+                    "1 Hour 46 Min");
+                break;
+            case 4:displayDeatilsForMovies("-We Can Be Herdes-", "This 2020 action-adventure family film based on \"The Adventures of\n" +
+                            "Sharkboy and Lavagirl\" features Pedro Pascal and Priyanka Chopra.",
+                    "YaYa Gosselin, Pedro Pascal,\n" +
+                            "Priyanka Chopra Jonas",
+                    "Robert Rodrigue",
+                    "1 Hour 40 Min");
+                break;
+            case 5:displayDeatilsForMovies("-Little Man-", "A man is so eager to become a dad that he'll believe anything, including the\n" +
+                            "notion that a baby-faced thief on the lam is really an abandoned toddler.",
+                    "Marlon Wayans, Shawn Wayans, Kerry Washington",
+                    "Keenen Ivory Wayans",
+                    "1 Hour 37 Min");
+                break;
+            case 6: return;
+            default:
+                System.out.println("Invalid choice.Please try again.");
+        }
+
+
+    }
+    public static void displayFantasyMovies(){
+        String [] fantasyMovie = {"-- Sci-Fi and Fantasy Movies --\n","1-I Am Mother ", "2-Mirage ", "3-Paradise ", "4-After Earth ", "5-Extinction","6-Return to previous page..."};
+        for(int i=0;i< fantasyMovie.length;i++){
+            System.out.println(fantasyMovie[i]);
+        }
+        System.out.print("\nEnter a Choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice){
+            case 1: displayDeatilsForMovies("-I Am Mother-", "Following humanity's mass extinction, a teen raised alone by a maternal\n" +
+                            "droid finds her entire world shaken when she encounters another human.",
+                    "Clara Rugaard, Rose Byrne,\n" +
+                            "Hilary Swank",
+                    "Grant Sputore",
+                    "1 Hour 53 Min");
+                break;
+            case 2:displayDeatilsForMovies("-Mirage-", "When a caring nurse alters the past to save a life, her present reality shifts to\n" +
+                            "a new timeline — one without her beloved daughter.",
+                    "Adriana Ugarte, Chino Darin,\n" +
+                            "Javier Gutiérrez",
+                    "Oriol Paulo",
+                    "2 Hour 9 Min");
+                break;
+            case 3:displayDeatilsForMovies("-Paradise-", "In the future, new technology lets people sell years of their lives to\n" +
+                            "others — with terrifying consequences for those who have no\n" +
+                            "other options left.",
+                    "Kostja Ullmann, Corinna\n" +
+                            "Kirchhoff, Marlene Tanczik ",
+                    "Boris Kunz",
+                    "1 Hour 58 Min");
+                break;
+            case 4:displayDeatilsForMovies("-After Earth-", "After crash-landing on the long-abandoned planet Earth, a young\n" +
+                            "boy sets out to find a beacon that will save him -- and his dying\n" +
+                            "father -- from doom.",
+                    "Jaden Smith, Will Smith,\n" +
+                            "Sophie Okonedo",
+                    "M. Night Shyamalan",
+                    "1 Hour 40 Min");
+                break;
+            case 5:displayDeatilsForMovies("-Extinction-", "Plagued by dreams of an alien invasion, a family man faces his\n" +
+                            "worst nightmare when an extraterrestrial force begins\n" +
+                            "exterminating Earth's inhabitants.",
+                    "Michael Pefia, Lizzy Caplan,\n" +
+                            "Israel Broussard",
+                    "Ben Young",
+                    "1 Hour 45 Min");
+                break;
+            case 6: return;
+            default:
+                System.out.println("Invalid choice.Please try again.");
+
+        }
+    }
+
+    public static void displayKidsMovies(){
+        String [] kidsMovie ={"-- Family and Kids --\n","-Kids Movie-\n","1-Boss Baby ", "2-Madagascar ", "3-Alvin And The Chipmunks (Chipwrecked) ", "4-My Little Pony ", "5-Barbie Dolphin Magic","6-Return to previous page..."};
+        for(int i=0;i<kidsMovie.length;i++){
+            System.out.println(kidsMovie[i]);
+        }
+
+        System.out.print("\nEnter Your Choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice){
+            case 1:displayDeatilsForMovies("-Boss Baby-", "A kid finds himself at the center of a sinister corporate plot when\n" +
+                            "his parents bring home a baby who only talks business when\n" +
+                            "they're not around.",
+                    "Alec Baldwin, Lisa Kudrow,\n" +
+                            "Jimmy Kimmel",
+                    "Tom McGrath",
+                    "1 Hour 37 Min");
+                break;
+            case 2:displayDeatilsForMovies("-Madagascar-", "Four animal friends get a taste of the wild life when they break out \n" +
+                            "of captivity at the Central Park Zoo and wash ashore on the island \n" +
+                            "of Madagascar.",
+                    "Ben Stiller, Chris Rock,\n " +
+                            "David Schwimmer",
+                    "Eric Darnell, Tom McGrath",
+                    "1 Hour 26 Min");
+                break;
+            case 3:displayDeatilsForMovies("-Alvin And The Chipmunks (Chipwrecked)", "After boarding a cruise liner for a family vacation, the Chipmunks\n" +
+                            "and the Chipettes end up castaways on a deserted island... but\n" +
+                            "they're not alone!",
+                    "Jason Lee, David Cross, \n" +
+                            "Jenny Slate",
+                    "Mike Mitchell",
+                    "1 Hour 27 Min");
+                break;
+            case 4:displayDeatilsForMovies("-My Little Pony-", "Equestria's divided. But a bright-eyed hero believes Earth Ponies,\n" +
+                            "Pegasi and Unicorns should be pals — and, hoof to heart, she's \n" +
+                            "determined to prove it.",
+                    "Vanessa Hudgens, Kimiko Glenn, \n James Marsden",
+                    "Robert Cullen, José Luis Ucha",
+                    "1 Hour 31 Min");
+                break;
+            case 5:displayDeatilsForMovies("-Barbie Dolphin Magic-", "While visiting Ken and exploring a coral reef, Barbie and her sisters\n" +
+                            "make an amazing discovery and meet a mysterious new friend.",
+                    "Erica Lindbeck, Shannon\n" +
+                            "Chan-Kent, Kazumi Evans",
+                    "Conrad Helten",
+                    "1 Hour 4 Min");
+                break;
+            case 6:return;
+            default:
+                System.out.println("Invalid choice.Please try again.");
+        }
+
+    }
+
 
     public static void series(){
         System.out.println("\n SERIES: ");
