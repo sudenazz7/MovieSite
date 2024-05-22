@@ -9,7 +9,7 @@ public class Main {
 
     static void userHints(){
 
-        System.out.println("\nWelcome to Our Movive Site!");
+        System.out.println("\nWelcome to Our Movie Site!");
         System.out.println("To perform a transaction within the system, please select one of the following transactions!");
         while (true) {
             int choice;
@@ -47,11 +47,22 @@ public class Main {
             }
         }
     }
-    static void createUserAccount(){
+    static void createUserAccount() {
         System.out.print("Full Name: ");
         String fullName = scanner.nextLine();
-        System.out.print("E-mail: ");
-        String email = scanner.nextLine();
+
+        String email;
+        boolean isExistingEmail;
+        do {
+            System.out.print("E-mail: ");
+            email = scanner.nextLine();
+            isExistingEmail = checkExistingEmail(email);
+            if (isExistingEmail) {
+                System.out.println("This email address is already registered. Please enter a different email.");
+            }
+
+        }while(isExistingEmail);
+
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
@@ -62,6 +73,15 @@ public class Main {
 
         System.out.println("Your account has been created succesfully!");
 
+    }
+
+    static boolean checkExistingEmail(String email){
+        for(int i=0 ;i<UserQuantity ; i++){
+            if(users[i][1].equals(email)){
+                return true;
+            }
+        }
+        return false;
     }
 
     static int login(){
@@ -426,6 +446,7 @@ public class Main {
         System.out.println("\nMOVIES");
         System.out.println("1-Display All Movies");
         System.out.println("2-Choose a Category");
+        System.out.println("3-");
         System.out.println("3-Back to Home Page");
         System.out.println();
         System.out.print("Please Enter your Transaction : ");
