@@ -1665,7 +1665,7 @@ public class Main {
                     System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<<<< Comedy >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                     break;
                 case 4:
-                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<< Si-Ci and Fantacy >>>>>>>>>>>>>>>>>>>>>>>>");
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<< Sci-fi and Fantacy >>>>>>>>>>>>>>>>>>>>>>>>");
                     break;
                 case 5:
                     System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<< Kids and Family >>>>>>>>>>>>>>>>>>>>>>>>>>" );
