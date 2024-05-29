@@ -121,7 +121,8 @@ public class Main {
             System.out.println("2. Popular This Week");
             System.out.println("3. Movies");
             System.out.println("4. Series");
-            System.out.println("5. Exit");
+            System.out.println("5. User's Favorites");
+            System.out.println("6. Exit");
 
 
             System.out.print("Please Enter Your Transaction: ");
@@ -143,11 +144,14 @@ public class Main {
 
                     break;
 
-                case 4://dizi
+                case 4://series
                     series();
                     break;
+                case 5://usersfavorites
+                    usersFavorites();
+                    break;
 
-                case 5:// exit
+                case 6:// exit
                     System.out.println("You Have Exit Moive Site. See You Next Time!!!");
                     System.exit(0);
                     break;
@@ -1616,6 +1620,74 @@ public class Main {
                 System.out.println("Invalid choice, please try again!");
         }
     }
+
+    public static void usersFavorites(){
+
+        String [][][]  myListArray = new String[][][]{
+                {{"-Heart Parade", "1h 48m", "+18"},
+                        {"-Love Tactics", "1h 43m", "+13"},
+                        {"-Thank You Next", "1 season/ 8 episode", "+16"},
+                        {"-One Day", "1 season/ 10 episode", "+18"}},
+                {{"-Lupin", "3 season / 13 episode", "+16"},
+                        {"-The Maze Runner", "1h 54m", "+16"},
+                        {"-La Casa De Papel", "5 season / 48 episode", "+18"}
+                },
+                {{"-Bird Box", "2h 4m", "+18"},
+                        {"-Stranger Things", "4 season/ 34 episode", "+16"},
+                        {"-Van Helsing", "5 season / 65 episode", "+18"}},
+                {{"-Little Man", "1h 37m", "+16"},
+                        {"-Friends", "10 season / 236 episode", "+13"},
+                        {"-Orange is The New Black", "7 season / 91 episode","+16"}},
+                {{"-I Am Mother", "1h 53m", "+13"},
+                        {"-Paradise", "1h 58m", "+18"},
+                        {"-The Witcher", "3 season / 24 episode", "+18"},
+                        {"-Wednesday", "1 season / 8 episode", "+18"}},
+                {{"-Madagascar", "1h 26m", "+7"},
+                        {"-Boss Baby", "1h 37m", "+7"},
+                        {"-Adventure Time", "10 season / 283 episode", "+7"},}
+        };
+
+        System.out.println("\n-User's Favorites-");
+
+        for(int i=0;i< myListArray.length;i++){
+
+            switch(i){
+                case 0:
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<<<< Romantic >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    break;
+                case 1:
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<<<< Action >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    break;
+                case 2:
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<<<< Horror >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    break;
+                case 3:
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<<<< Comedy >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    break;
+                case 4:
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<< Si-Ci and Fantacy >>>>>>>>>>>>>>>>>>>>>>>>");
+                    break;
+                case 5:
+                    System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<< Kids and Family >>>>>>>>>>>>>>>>>>>>>>>>>>" );
+                    break;
+                default:
+                    System.out.println("\nUnknown Category");
+                    break;
+
+            }
+            System.out.println("-------------------------------------------------------------------");
+            System.out.printf("%-20s %-30s %-20s\n", "Film Name", "Time", "Age limit");
+            System.out.println("-------------------------------------------------------------------");
+
+            for (int j = 0; j <  myListArray[i].length ; j++) {
+                System.out.printf("%-20s %-30s %-20s\n", myListArray[i][j][0], myListArray[i][j][1], myListArray[i][j][2]);
+            }
+
+        }
+
+
+    }
+
 
     public static void main(String[] args) {
         userHints();
