@@ -450,7 +450,6 @@ public class Main {
         System.out.println("\nMOVIES");
         System.out.println("1-Display All Movies");
         System.out.println("2-Choose a Category");
-        System.out.println("3-");
         System.out.println("3-Back to Home Page");
         System.out.println();
         System.out.print("Please Enter your Transaction : ");
