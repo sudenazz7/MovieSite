@@ -17,6 +17,7 @@ The user can comment or evaluate by choosing one of the options "Dislike", "Like
 ### Additional Features: 
 1. New Releases: List of recently released TV series and movies.
 2. Popular This Week: List of the most watched TV series and movies that week.
+3. User's Favorites: List of TV series and movies that users like.
 
 ## Usage
 1. Sign-up:
