@@ -6,8 +6,23 @@ import java.sql.Statement;
 
 public class DatabaseInitializer {
     public static void main(String[] args) {
-      /*  try (Connection conn = DatabaseConfig.connect();
+       /*
+        try (Connection conn = DatabaseConfig.connect();
              Statement stmt = conn.createStatement()) {
+
+            //new_releases
+            stmt.execute("""
+                    CREATE TABLE new_releases (
+                        id SERIAL PRIMARY KEY,
+                        title VARCHAR(255) NOT NULL,
+                        description TEXT,
+                        duration INT,
+                        rating FLOAT,
+                        age_limit INT,
+                        director_id INT REFERENCES directors(director_id),
+                        type VARCHAR(20) NOT NULL CHECK (type IN ('movie', 'series'))
+                    );
+            """);
 
             // directors
             stmt.execute("""
@@ -164,6 +179,5 @@ public class DatabaseInitializer {
             System.out.println("An error occurred: " + e.getMessage());
         }
         */
-
     }
 }
