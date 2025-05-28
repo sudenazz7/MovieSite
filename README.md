@@ -1,42 +1,93 @@
 # Movie Site Application
-
-This project is a Java-based movie website application that allows users to browse the movie site and access detailed information about movies and TV series, and serves their entertainment needs. After users register to the system and log in to the system with user authentication, they can view movies/series, view movies and TV series according to the category they want, access detailed information, and even add movie/series comments and evaluate them according to their liking.
+The Movie Site Application is a Java-based web platform that allows users to explore a wide range of movies and TV series, access detailed information, and interact through comments and ratings. The system includes user authentication, content categorization, and personalized lists to enhance the entertainment experience.
 
 ## Features
+### User Authentication
+Users can register using their email and password.
 
-### User Authentication:
-Users can create accounts using their email and password or log in to existing accounts.
-### Movie/Series Listing:
-The user is given the option to view all movies/series list.
-### View Movie/Series Information in Details:
-It allows the user to see details such as the plot, actors, director, how many seasons, how many episodes or how many minutes of the movie/series she/he has chosen.
-### Search for Movies/Series by Category: 
-This movie site allows the user to choose according to categories such as romance, comedy, action, sci-fi and fantasy, family and children, horror.
-### Comment and Rate Based On The Amount of Likes:
-The user can comment or evaluate by choosing one of the options "Dislike", "Like" and "Like It Very Much".
-### Additional Features: 
-1. New Releases: List of recently released TV series and movies.
-2. Popular This Week: List of the most watched TV series and movies that week.
-3. User's Favorites: List of TV series and movies that users like.
+Existing users can log in securely with their credentials.
 
-## Usage
-1. Sign-up:
-   To log in to the system, the user must first create an account.
-2. Sign-in:
-   After creating an account, ser can log in to the system by entering the email address and password he/she entered when registering.
-3. Main Menu:
-   Upon successful sign-in, users are presented with a main menu containing various options.
+### Movie & Series Listing
+Displays a comprehensive list of all available movies and TV series.
+
+Filter options available based on user interest.
+
+### Detailed Movie/Series Information
+View detailed info such as:
+
+Plot summary
+
+Main cast and directors
+
+Duration or number of seasons/episodes
+
+### Category-Based Search
+Filter content by genre:
+
+Romance
+
+Comedy
+
+Action
+
+Sci-Fi & Fantasy
+
+Family & Children
+
+Horror
+
+### Comment & Reaction System
+Users can leave comments.
+
+Users can rate using:
+
+"Dislike"
+
+"Like"
+
+"Like It Very Much"
+
+### Additional Features
+New Releases: Recently added movies and series.
+
+Popular This Week: Most watched items in the current week.
+
+User Favorites: A personalized list of favorites saved by the user.
+
+## Usage Guide
+### 1. Sign-Up
+New users must register by providing an email and password.
+
+### 2. Sign-In
+Registered users can log in using their credentials.
+
+### 3. Main Menu
+After signing in, users will access the main menu with various features like browsing, searching, rating, and viewing favorites.
 
 ## Installation
-  1. Clone or Download the Repository: First, clone the LMS repository to your computer or download the project files manually.
-  2. Open with a Java IDE: Once you have the project files on your computer, feel free to open them using your preferred Java IDE.
-  3. Compile and Run the Project: After opening the project in your Java IDE, compile the source code to ensure there are no errors. Then, run the project within the IDE.
+1-Clone or Download the Repository
+   git clone https://github.com/sudenazz7/MovieSite.git
+Or manually download the ZIP file.
 
+2-Open the Project
+   Use any Java-compatible IDE (e.g., IntelliJ IDEA, Eclipse, NetBeans).
+
+3-Compile and Run
+   Make sure JDK is installed.
+   Compile the source code and run the project within your IDE.
+   
 ## Requirements
-This project can be executed on a computer with Java Development Kit (JDK) installed.
+-Java Development Kit (JDK) 8 or above
+
+-Java IDE (e.g., IntelliJ, Eclipse)
+
+-(Optional) MySQL or another database if persistence is enabled
 
 ## Contributors
 - [Nehir Çakılcı](https://github.com/Nehir0109)
 - [Sudenaz Albayrak](https://github.com/sudenazz7)
+
+
+
 
 
