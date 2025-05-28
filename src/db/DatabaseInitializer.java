@@ -10,6 +10,22 @@ public class DatabaseInitializer {
         try (Connection conn = DatabaseConfig.connect();
              Statement stmt = conn.createStatement()) {
 
+            //popular_this_week
+            stmt.execute("""
+CREATE TABLE popular_this_week (
+  pop_id INT PRIMARY KEY,
+  title VARCHAR(255),
+  description TEXT,
+  release_date DATE,
+  duration INT,
+  rating FLOAT,
+  age_limit INT,
+  director_id INT,
+  type VARCHAR(20),
+  FOREIGN KEY (director_id) REFERENCES directors(director_id)
+);
+""");
+
             //new_releases
             stmt.execute("""
                     CREATE TABLE new_releases (
@@ -63,6 +79,7 @@ public class DatabaseInitializer {
                     rating FLOAT,
                     age_limit INT,
                     director_id INT REFERENCES directors(director_id)
+                    actors TEXT
                 );
             """);
 
@@ -77,26 +94,7 @@ public class DatabaseInitializer {
                     rating FLOAT,
                     age_limit INT,
                     director_id INT REFERENCES directors(director_id)
-                );
-            """);
-
-            // movie_actors
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS movie_actors (
-                    movie_id INT REFERENCES movies(movie_id),
-                    actor_id INT REFERENCES actors(actor_id),
-                    PRIMARY KEY (movie_id, actor_id)
-                );
-            """);
-
-            // series_actors
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS series_actors (
-                    series_id INT,
-                    actor_id INT,
-                    PRIMARY KEY (series_id, actor_id),
-                    FOREIGN KEY (series_id) REFERENCES series(series_id),
-                    FOREIGN KEY (actor_id) REFERENCES actors(actor_id)
+                    actors TEXT
                 );
             """);
 
