@@ -43,7 +43,7 @@ public class CommentHandler {
         try (Connection conn = DatabaseConfig.connect()) {
             String sql;
             if (type.equalsIgnoreCase("movie")) {
-                sql = "INSERT INTO movies_comments (user_id, movie_id, content, created_at) VALUES (?, ?, ?, ?)";
+                sql = "INSERT INTO movie_comments (user_id, movie_id, content, created_at) VALUES (?, ?, ?, ?)";
             } else {
                 sql = "INSERT INTO series_comments (user_id, series_id, content, created_at) VALUES (?, ?, ?, ?)";
             }

@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class UserAuth {
     static Scanner scanner = new Scanner(System.in);
+    public static String username;
 
     public static void Auth() {
         System.out.println("\nWelcome to Our Movie Site!");

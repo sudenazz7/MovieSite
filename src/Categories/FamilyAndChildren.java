@@ -1,5 +1,6 @@
 package Categories;
 
+import db.DatabaseConfig;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -15,8 +16,8 @@ public class FamilyAndChildren {
     }
 
     private static void displayFromTable(String tableName, String label) {
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:your_database.db");
-             Statement stmt = conn.createStatement()) {
+        try (Connection conn = DatabaseConfig.connect();
+              Statement stmt = conn.createStatement()) {
 
             String sql = "SELECT m.movie_id, m.title, m.description, m.release_date, m.duration, m.rating, m.age_limit, m.director_id " +
                     "FROM " + tableName + " t JOIN movies m ON t.movie_id = m.movie_id";

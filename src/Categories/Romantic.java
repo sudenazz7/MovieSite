@@ -1,6 +1,7 @@
 package Categories;
 
 import java.sql.*;
+import db.DatabaseConfig;
 import java.util.Scanner;
 
 public class Romantic {
@@ -15,12 +16,11 @@ public class Romantic {
     }
 
     private static void displayFromTable(String tableName, String label) {
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:your_database.db");
+        try (Connection conn = DatabaseConfig.connect();
              Statement stmt = conn.createStatement()) {
 
             String sql = "SELECT m.movie_id, m.title, m.description, m.release_date, m.duration, m.rating, m.age_limit, m.director_id " +
                     "FROM " + tableName + " t JOIN movies m ON t.movie_id = m.movie_id";
-
             ResultSet rs = stmt.executeQuery(sql);
 
             int index = 1;

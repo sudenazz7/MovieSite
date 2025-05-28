@@ -63,12 +63,12 @@ public class AllSeries {
                         String title = rs.getString("title");
                         String description = rs.getString("description");
                         String releaseDate = rs.getString("release_date");
-                        int duration = rs.getInt("duration");
+                        int seasons = rs.getInt("seasons");
                         double rating = rs.getDouble("rating");
                         int ageLimit = rs.getInt("age_limit");
                         String actors = rs.getString("actors");
 
-                        displaySeriesDetails(username, seriesId, title, description, releaseDate, duration, rating, ageLimit, actors);
+                        displaySeriesDetails(username, seriesId, title, description, releaseDate, seasons, rating, ageLimit, actors);
                         break;
                     }
                 }
@@ -82,12 +82,12 @@ public class AllSeries {
     }
 
     private static void displaySeriesDetails(String username, int seriesId, String title, String description, String releaseDate,
-                                             int duration, double rating, int ageLimit, String actors) {
+                                             int seasons, double rating, int ageLimit, String actors) {
         System.out.println("\n--- SERIES DETAILS ---");
         System.out.println("Title: " + title);
         System.out.println("Description: " + description);
         System.out.println("Release Date: " + releaseDate);
-        System.out.println("Episode Duration: " + duration + " min");
+        System.out.println("Seasons: " + seasons + " min");
         System.out.println("Rating: " + rating);
         System.out.println("Age Limit: " + ageLimit + "+");
         System.out.println("Cast: " + actors);

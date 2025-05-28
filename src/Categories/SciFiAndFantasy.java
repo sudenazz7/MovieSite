@@ -1,5 +1,6 @@
 package Categories;
 
+import db.DatabaseConfig;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class SciFiAndFantasy {
     }
 
     private static void displayFromTable(String tableName, String label) {
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:your_database.db");
+        try (Connection conn = DatabaseConfig.connect();
              Statement stmt = conn.createStatement()) {
 
             String sql = "SELECT m.movie_id, m.title, m.description, m.release_date, m.duration, m.rating, m.age_limit, m.director_id " +

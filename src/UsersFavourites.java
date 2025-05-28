@@ -22,7 +22,7 @@ public class UsersFavourites {
         int itemsPerCategory = 10;
 
         try (Connection conn = DatabaseConfig.connect()) {
-            String sql = "SELECT fav_id, title, duration, age_limit FROM users_favourites ORDER BY pop_id ASC";
+            String sql = "SELECT fav_id, title, duration, age_limit FROM users_favourites ORDER BY fav_id ASC";
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
 
