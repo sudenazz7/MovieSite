@@ -24,7 +24,7 @@ public class AllMovies {
                 displayAllMovies(username);
                 break;
             case 2:
-                // chooseCategoryForMovie();
+                ChooseCategoryForMovie.chooseCatagoryForMovie();
                 break;
             case 3:
                 return;

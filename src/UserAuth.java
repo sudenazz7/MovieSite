@@ -116,8 +116,4 @@ public class UserAuth {
             return null;
         }
     }
-
-    public static void main(String[] args) {
-        Auth();
-    }
 }

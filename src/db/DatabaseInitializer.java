@@ -40,24 +40,6 @@ CREATE TABLE popular_this_week (
                     );
             """);
 
-            // directors
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS directors (
-                    director_id SERIAL PRIMARY KEY,
-                    name VARCHAR(100),
-                    birthdate DATE
-                );
-            """);
-
-            // actors
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS actors (
-                    actor_id SERIAL PRIMARY KEY,
-                    name VARCHAR(100),
-                    birthdate DATE
-                );
-            """);
-
             // users
             stmt.execute("""
                 CREATE TABLE IF NOT EXISTS users (
@@ -98,25 +80,6 @@ CREATE TABLE popular_this_week (
                 );
             """);
 
-            // movie_ratings
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS movie_ratings (
-                    rating_id SERIAL PRIMARY KEY,
-                    user_id INT REFERENCES users(user_id),
-                    movie_id INT REFERENCES movies(movie_id),
-                    rating FLOAT
-                );
-            """);
-
-            // series_ratings
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS series_ratings (
-                    rating_id SERIAL PRIMARY KEY,
-                    user_id INT REFERENCES users(user_id),
-                    series_id INT REFERENCES series(series_id),
-                    rating FLOAT
-                );
-            """);
 
             // movie_comments
             stmt.execute("""

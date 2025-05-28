@@ -24,7 +24,7 @@ public class AllSeries {
                 displayAllSeries(username);
                 break;
             case 2:
-                // chooseCategoryForSeries();
+                ChooseCategoryForSeries.chooseCatagoryForSeries();
                 break;
             case 3:
                 return;
